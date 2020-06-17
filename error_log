@@ -1,0 +1,5 @@
+[30-Sep-2019 03:08:54 Europe/Sofia] PHP Fatal error:  Out of memory (allocated 631164928) (tried to allocate 14599088 bytes) in phar:///opt/cpanel/composer/bin/composer/src/Composer/Util/RemoteFilesystem.php on line 451
+[30-Sep-2019 03:14:57 Europe/Sofia] PHP Fatal error:  Out of memory (allocated 623910912) (tried to allocate 33554440 bytes) in phar:///opt/cpanel/composer/bin/composer/src/Composer/DependencyResolver/RuleSet.php on line 83
+[30-Sep-2019 16:14:28 Europe/Sofia] PHP Fatal error:  Out of memory (allocated 631164928) (tried to allocate 14599088 bytes) in phar:///opt/cpanel/composer/bin/composer/src/Composer/Util/RemoteFilesystem.php on line 451
+[30-Sep-2019 17:37:09 Europe/Sofia] PHP Fatal error:  Out of memory (allocated 623910912) (tried to allocate 33554440 bytes) in phar:///opt/cpanel/composer/bin/composer/src/Composer/DependencyResolver/RuleSet.php on line 83
+[30-Sep-2019 17:38:05 Europe/Sofia] PHP Fatal error:  Out of memory (allocated 641998848) (tried to allocate 4718592 bytes) in phar:///opt/cpanel/composer/bin/composer/src/Composer/DependencyResolver/RuleSet.php on line 90
