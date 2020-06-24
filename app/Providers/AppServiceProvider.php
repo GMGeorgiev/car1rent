@@ -18,7 +18,6 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
-
     /**
      * Bootstrap any application services.
      *
@@ -26,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        error_reporting(0);
         Schema::defaultStringLength(191);
         $system_configs = DB::table('System')->where('isActive',1)->get();
         if($system_configs && count($system_configs) > 0){

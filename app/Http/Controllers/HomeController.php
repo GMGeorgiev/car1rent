@@ -10,6 +10,7 @@ use DateTimeZone;
 use Response;
 use Redirect;
 use App\BaseHelper;
+use DB;
 
 class HomeController extends BaseRentController
 {
@@ -31,8 +32,16 @@ class HomeController extends BaseRentController
      */
     public function index()
     {
-
-        return view('users.user-home');
+        $data['activeBookings'] = App\Booking::query()->where('status',1)->where('user_id', Auth::user()->id)->get()->count();
+        $data['unpaidBookings'] = DB::table('BookingAdditions')
+                                    ->join('Booking', 'BookingAdditions.bookingID', '=' , 'Booking.id')
+                                    ->where('Booking.user_id',Auth::user()->id)
+                                    ->where('BookingAdditions.payment_status',3)
+                                    ->get()
+                                    ->count();
+        $data['allBookings'] = App\Booking::query()->where('isActive', 1)->where('user_id', Auth::user()->id)->get()->count();
+        return view('users.user-home')
+                ->with('data',$data);
     }
 
     public function getCustomerData()
