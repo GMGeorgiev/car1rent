@@ -21,6 +21,7 @@ use App\AppLanguage;
 use App\BookingHelper;
 use PDF;
 use App\Offices;
+use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
@@ -79,7 +80,9 @@ class BookingController extends Controller
 
                 $paymentType = Input::get('payment');
                 $data_booking['payment_type'] = Input::get('payment');
-
+                if(Auth::user()){
+                    $data_booking['rent_info']['user_id'] = Auth::user()->id;
+                }
                 if(Input::get('addТаке') && Input::get('addТаке') != ''){
                     $data_booking['rent_info']['TakeAddress'] = trim(Input::get('addТаке'));
                 }

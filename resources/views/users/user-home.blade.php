@@ -43,7 +43,7 @@
 
                                                 </p>
                                                 <div class="star">
-                                                    <span style="color: #fab702">5</span>
+                                                <span style="color: #fab702">{{ $data[activeBookings] }}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -54,7 +54,7 @@
 
                                                 </p>
                                                 <div class="star">
-                                                    <span style="color: #fab702">0</span>
+                                                    <span style="color: #fab702">{{ $data[unpaidBookings] }}</span>
 
                                                 </div>
                                             </div>
@@ -66,7 +66,7 @@
 
                                                 </p>
                                                 <div class="star">
-                                                    <span style="color: #fab702">0</span>
+                                                    <span style="color: #fab702">{{ $data[allBookings] }}</span>
 
                                                 </div>
                                             </div>
