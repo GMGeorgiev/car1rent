@@ -57,6 +57,7 @@ return [
     'offices'=> 'Офиси',
     'office'=> 'Офис',
     'users'=> 'Потребители',
+    'bookingInfo' => 'Boooking Info',
     'dashboard'=> 'Dashboard',
     'cars'=> 'Автомобили',
     'car'=> 'Автомобил',
