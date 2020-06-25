@@ -25,12 +25,11 @@
     <!-- Scripts -->
 
     <script src="{{ asset('libraries/popper.min.js') }}"></script>
-    <script src="{{ asset('libraries/date-picker/js/bootstrap-datetimepicker.min.js') }}"></script>
-    <script src="{{ asset('js/custom-js.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ asset('libraries/moment.min.js') }}"></script>
-    <script src="{{ asset('js/fullcalendar.min.js') }}"></script>
+    <script src="{{ asset('js/custom-js.js') }}"></script>
+    <script src="{{ asset('libraries/date-picker/js/bootstrap-datetimepicker.min.js') }}"></script>
     @yield('script')
 
 
