@@ -20,7 +20,7 @@ Route::get('/', 'BaseRentController@goHome');
 Route::get('/cars', 'BaseRentController@getCarsBase')->name('cars');
 Route::get('/conditions', 'BaseRentController@getConditions')->name('conditions');
 
-Route::get('events', 'EventsController@index');
+Route::get('events', 'EventController@index');
 
 Route::prefix('search-cars')->group(function (){
     Route::match(array('GET', 'POST'), '/{data?}', array(

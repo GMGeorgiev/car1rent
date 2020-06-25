@@ -9,15 +9,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
-    <script src="{{ asset('libraries/popper.min.js') }}"></script>
-    <script src="{{ asset('libraries/moment.min.js') }}"></script>
-    <script src="{{ asset('libraries/date-picker/js/bootstrap-datetimepicker.min.js') }}"></script>
-    <script src="{{ asset('js/custom-js.js') }}"></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -28,6 +19,19 @@
     <link href="{{ asset('libraries/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('libraries/fontawesome-free-5.11.2-web/css/all.css') }}" rel="stylesheet">
     <link href="{{ asset('libraries/date-picker/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
+    @yield('style')
+
+    <!-- Scripts -->
+
+
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ asset('libraries/moment.min.js') }}"></script>
+    <script src="{{ asset('js/fullcalendar.min.js') }}"></script>
+    <script src="{{ asset('libraries/popper.min.js') }}"></script>
+    <script src="{{ asset('libraries/date-picker/js/bootstrap-datetimepicker.min.js') }}"></script>
+    <script src="{{ asset('js/custom-js.js') }}"></script>
+    @yield('script')
 </head>
 <body>
     <div id="app">
