@@ -19,6 +19,7 @@ use App\Countries;
 use App\CountryTranslation;
 use App\AppLanguage;
 use App\BookingHelper;
+use App\EventHelper;
 use PDF;
 use App\Offices;
 use Illuminate\Support\Facades\Auth;
@@ -207,6 +208,7 @@ class BookingController extends Controller
             if($paymentType == 1){
                 $data_booking['rent_info']['payment_status'] = 3;
                 $booking = BookingHelper::bookingAdd($data_booking);
+                EventHelper::eventAdd($data_booking);
                 $data_booking['bookingDate'] = $booking->created_at->format('d-m-Y');
                 $data_booking['booking'] = $booking;
 

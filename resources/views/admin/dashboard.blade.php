@@ -6,12 +6,14 @@
 @section('content')
 <meta name="viewport" content="width=device-width, initial-scale=1">
 @include('admin.menu')
+<div class="content">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Booking Calendar</div>
                     {!! $calendar->calendar() !!}
             </div>
+        </div>
         </div>
     </div>
 @endsection
