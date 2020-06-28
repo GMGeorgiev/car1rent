@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Input;
 use App;
 use DateTime;
 use DateTimeZone;
+use Auth;
 
 
 class Admin
@@ -1807,6 +1808,60 @@ class Admin
         }
 
         return $edit_insurance;
+    }
+
+    public static function getBookings($all = null, $language = null){
+
+        $userType = Auth::user()->role;
+
+        if ($language == null) {
+            $language = App::getLocale();
+        }
+
+        $results = DB::table('Booking')
+            ->leftJoin('BookingAdditions', 'BookingAdditions.bookingID', '=', 'Booking.id')
+            ->leftJoin('PaymentStatusTranslations', 'PaymentStatusTranslations.PaymentStatusID', '=', 'BookingAdditions.payment_status')
+            ->leftJoin('PaymentTypeTranslations', 'PaymentTypeTranslations.PaymentTypeID', '=', 'BookingAdditions.paymentType')
+            ->leftJoin('BookingStatusTranslations', 'BookingStatusTranslations.BookingStatusID', '=', 'Booking.status')
+            ->leftJoin('cars', 'cars.id', '=', 'Booking.car_id')
+            ->leftJoin('carmodels', 'carmodels.id', '=', 'cars.ModelID')
+            ->leftJoin('makers', 'makers.id', '=', 'cars.MakerID')
+            ->leftJoin('users', 'users.id', '=', 'Booking.user_id')
+            ->where('PaymentStatusTranslations.locale', '=', $language)
+            ->where('PaymentTypeTranslations.locale', '=', $language)
+            ->where('BookingStatusTranslations.locale', '=', $language)
+            ->select('Booking.id',
+                'Booking.user_id',
+                'Booking.isActive',
+                'BookingAdditions.payment_status',
+                'BookingAdditions.firstName as CustomerName',
+                'BookingAdditions.lastName as CustomerLastName',
+                'users.name as UserName',
+                'Booking.from_date',
+                'Booking.to_date',
+                'cars.RegNumber',
+                'carmodels.ModelName',
+                'makers.MakerName',
+                'PaymentStatusTranslations.PaymentStatusName',
+                'BookingStatusTranslations.BookingStatusName',
+                'PaymentTypeTranslations.PaymentTypeName',
+                'Booking.car_id'
+            );
+        if(!$all){
+            $results->where('Booking.isActive', '=', 1);
+        }
+
+        if($userType != 1){
+            $results->where('Booking.user_id', '=', $userType);
+        }
+
+        if($results->paginate(100)) {
+            $results = $results->paginate(100);
+        }else {
+            $results = null;
+        }
+
+        return $results;
     }
 
 

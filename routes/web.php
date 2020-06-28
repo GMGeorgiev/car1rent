@@ -197,6 +197,19 @@ Route::prefix('admin')->group(function (){
         Route::get('/insurance', 'AdminController@getRentalInsurance')->name('admin.rental-settings-insurance');
 
     });
+
+    //booking menage
+    Route::get('/menage-booking', 'AdminController@getPriceSettings')->name('admin.menage-booking');
+    Route::prefix('menage-booking')->group(function (){
+        Route::get('lang/{locale}', function ($locale){
+            Session::put('locale', $locale);
+            return redirect()->back();
+        });
+        Route::get('/car-giving', 'AdminController@getGivingCar')->name('admin.menage-booking-giving');
+
+
+    });
+
     Route::post('/add-rent-extra', 'AdminController@postAddRentExtra')->name('admin.add-rent-extras');
     Route::post('/edit-rent-extra', 'AdminController@postEditRentExtra')->name('admin.edit-rent-extras');
     Route::post('/get-rent-extras-languages', 'AdminController@postGetTranslationsRentExtra')->name('admin.get-rent-extras-languages');

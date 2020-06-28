@@ -1810,8 +1810,15 @@ class AdminController extends Controller
 
     }
 
+    public function getGivingCar(Request $request)
+    {
 
+        $all_bookings = Admin::getBookings();
 
+        $data=[ 'all_bookings' => $all_bookings];
 
+        return view('admin.giving-car')->withData ( $data );
+
+    }
 
 }
