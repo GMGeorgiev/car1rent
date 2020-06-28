@@ -57,6 +57,7 @@ return [
     'offices'=> 'Офисы',
     'office'=> 'Офис',
     'users'=> 'Пользователей',
+    'user'=> 'Пользовател',
     'dashboard'=> 'Dashboard',
     'cars'=> 'Автомобили',
     'car'=> 'Автомобил',
@@ -111,6 +112,7 @@ return [
     'infoCustomerSend1' => 'Ваучера за вашия нает автомобил е в прикачения файл.',
     'thankYouMail' => 'Благодарим ви че избрахте нас!',
     'phone' => 'Телефон',
+    'lastName' => 'Last Name',
     'cityToCity' => 'Трансфер Град/Град'
 
 ];

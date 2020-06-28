@@ -57,6 +57,7 @@ return [
     'offices'=> 'Offices',
     'office'=> 'Office',
     'users'=> 'Users',
+    'user'=> 'User',
     'dashboard'=> 'Dashboard',
     'cars'=> 'Cars',
     'car'=> 'Car',
@@ -111,6 +112,7 @@ return [
     'infoCustomerSend1' => 'The voucher for your rental car is in the attachment.',
     'thankYouMail' => 'Thank you for choosing us!',
     'phone' => 'Phone',
+    'lastName' => 'Last Name',
     'cityToCity' => 'Transfer City/City'
 
 ];

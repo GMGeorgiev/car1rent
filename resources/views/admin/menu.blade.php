@@ -110,6 +110,17 @@
                     </a>
                 </li>
 
+
+            </ul>
+        </li>
+        <li>
+            <a href="#pageSubmenubooking" data-toggle="collapse" aria-expanded="{{ Request::is('admin/menage-booking*') ? 'true' : 'false' }}" class="dropdown-toggle {{ Request::is('admin/menage-booking*') ? ' active' : '' }}"><i class="fa fa-handshake-o" aria-hidden="true"></i> <span>Menage Booking</span></a>
+            <ul class="collapse list-unstyled {{ Request::is('admin/menage-booking/*') ? 'collapse show' : '' }}" id="pageSubmenubooking">
+                <li>
+                    <a class=" list-items {{ Request::is('admin/menage-booking/car-giving') ? ' active' : '' }}" href="{{ route('admin.menage-booking-giving') }}">
+                        <i class="list-items-icon fa fa-cubes" aria-hidden="true"></i> <span>Даване на кола</span>
+                    </a>
+                </li>
             </ul>
         </li>
 
