@@ -1855,8 +1855,8 @@ class Admin
             $results->where('Booking.user_id', '=', $userType);
         }
 
-        if($results->paginate(100)) {
-            $results = $results->paginate(100);
+        if($results->paginate(50)) {
+            $results = $results->paginate(50);
         }else {
             $results = null;
         }

@@ -60,6 +60,23 @@
                         </li>
                     @endforeach
                 </ul>
+
+                @if ($data['all_bookings']->lastPage() > 1)
+                    <ul class="pagination">
+                        <li class="page-item {{ ($data['all_bookings']->currentPage() == 1) ? ' disabled' : '' }}">
+                            <a class="page-link" href="{{ $data['all_bookings']->url(1) }}"><span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span></a>
+                        </li>
+                        @for ($i = 1; $i <= $data['all_bookings']->lastPage(); $i++)
+                            <li class="page-item {{ ($data['all_bookings']->currentPage() == $i) ? ' active' : '' }}">
+                                <a href="{{ $data['all_bookings']->url($i) }}" class="page-link">{{ $i }}</a>
+                            </li>
+                        @endfor
+                        <li class="page-item {{ ($data['all_bookings']->currentPage() == $data['all_bookings']->lastPage()) ? ' disabled' : '' }}">
+                            <a class="page-link" href="{{ $data['all_bookings']->url($data['all_bookings']->currentPage()+1) }}" >&raquo;</a>
+                        </li>
+                    </ul>
+                @endif
             </div>
 
 
