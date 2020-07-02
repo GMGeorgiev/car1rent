@@ -8,7 +8,6 @@ use App\Cities;
 use App\Countries;
 use App\Coupons;
 use App\PriceRules;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -19,6 +18,9 @@ use App\User;
 use Session;
 use App\Admin;
 use App\Makers;
+use App\Event;
+use Request;
+use App\Cars;
 
 
 class AdminController extends Controller
@@ -36,7 +38,16 @@ class AdminController extends Controller
         return view('admin.dashboard');
     }
 
-
+    public function getEventData(){
+            $events = Event::all();
+            $events = $events->toJson();
+            $allModels = Cars::getAllModels();
+            $allModels = array_combine(array_values($allModels), array_values($allModels));
+            return response()->json([
+                'events' => $events,
+                'models' => json_encode($allModels)
+                ]);
+    }
 
 
     public function getExtras()

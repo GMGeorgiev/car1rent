@@ -46,7 +46,6 @@ Route::prefix('booking')->group(function (){
     Route::post('/get-ajax-insurance', 'BaseRentController@postGetAjaxInsurance')->name('admin.get-ajax-insurance');
     Route::post('/ajax-insurance-add-remove', 'BaseRentController@postPutInsuranceToForm')->name('booking.insurance-add-remove');
     Route::post('/create-booking', 'BookingController@postCreateBooking')->name('booking.create-booking');
-
 });
 
 
@@ -63,6 +62,7 @@ Route::prefix('admin')->group(function (){
 
     //dashboard routes
     Route::get('/dashboard', 'EventController@index')->name('admin.dashboard');
+    Route::get('/ajax-events', 'AdminController@getEventData')->name('admin.ajax-evets');
     //end dashboard
 
 

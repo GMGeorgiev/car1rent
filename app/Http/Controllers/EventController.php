@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Calendar;
 use App\Event;
+use App\Cars;
 
 class EventController extends Controller
 {
@@ -29,9 +30,7 @@ class EventController extends Controller
                 );
             }
         }
-
         $calendar = \Calendar::addEvents($events);
-
 
 
         return view('admin.dashboard', compact('calendar'));

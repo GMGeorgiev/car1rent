@@ -93,5 +93,16 @@ class Cars extends Model
         return $this->belongsTo(SIPPcodes::class, 'sipp4_id');
     }
 
+    public static function getAllModels(){
+        $allModels = array();
+        $allCars = self::all();
+        $allCars = $allCars->all();
+        $allModels = array_map(function($car){
+            $model = CarModels::where('id', $car->ModelID)->first();
+            $modelTitle = $model->ModelName . ' ' . $car->RegNumber;
+            return $modelTitle;
+        }, $allCars);
+        return $allModels;
+    }
 
 }
