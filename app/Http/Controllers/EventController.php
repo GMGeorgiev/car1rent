@@ -32,10 +32,6 @@ class EventController extends Controller
         }
         $calendar = \Calendar::addEvents($events);
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 90fd2ec1c5d182a1907831a16e75939c162191b4
         return view('admin.dashboard', compact('calendar'));
     }
 }
