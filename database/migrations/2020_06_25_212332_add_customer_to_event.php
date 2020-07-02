@@ -29,4 +29,8 @@ class AddCustomerToEvent extends Migration
             //
         });
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 90fd2ec1c5d182a1907831a16e75939c162191b4

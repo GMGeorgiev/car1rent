@@ -8,6 +8,9 @@
             <i class="fa fa-bar-chart"></i> <span>{{  __('language.dashboard')}}</span>
         </a>
         <a class="{{ Request::is('admin/users') ? ' active' : '' }}" href="{{ route('admin.users') }}">
+            <i class="fa fa-group"></i>Booking Info</span>
+        </a>
+        <a class="{{ Request::is('admin/users') ? ' active' : '' }}" href="{{ route('admin.users') }}">
             <i class="fa fa-group"></i> <span>{{  __('language.users')}}</span>
         </a>
         <li>

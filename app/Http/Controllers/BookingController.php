@@ -19,6 +19,7 @@ use App\Countries;
 use App\CountryTranslation;
 use App\AppLanguage;
 use App\BookingHelper;
+use App\EventHelper;
 use PDF;
 use App\Offices;
 use Illuminate\Support\Facades\Auth;

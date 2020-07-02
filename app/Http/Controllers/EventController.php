@@ -20,19 +20,22 @@ class EventController extends Controller
                     $value->title,
                     true,
                     new \DateTime($value->start_date),
-                    new \DateTime($value->end_date.' +1 day'),
+                    new \DateTime($value->end_date),
                     null,
                     // Add color and link on event
-                    [
-                        'color' => '#f05050',
-                        'url' => 'pass here url and any route',
-                    ]
+                 [
+                     'color' => '#ff0000',
+                     'url' => 'http://full-calendar.io',
+                 ]
                 );
             }
         }
         $calendar = \Calendar::addEvents($events);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 90fd2ec1c5d182a1907831a16e75939c162191b4
         return view('admin.dashboard', compact('calendar'));
     }
 }
